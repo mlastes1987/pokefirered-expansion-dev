@@ -1,6 +1,11 @@
-# Pokémon FireRed and LeafGreen
+# Pokémon FireRed and LeafGreen Expansion Dev
 
-This is a decompilation of English Pokémon FireRed and LeafGreen.
+![Screenshot](pokefirered-expansion-dev.jpg)
+
+Based on the pokefirered disassembly by [**Pret**](https://github.com/pret/pokefirered)
+
+An expansion of Pokemon FireRed/LeafGreen with quality of life features to
+enhance the vanilla experience.
 
 It builds the following ROM images:
 
