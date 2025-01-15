@@ -10,6 +10,8 @@ Based on the pokefirered disassembly with Pokeemerald Expansion Updates from [**
 
 - **Forgettable HMs** Without a Move Tutor.
 
+- **Startup Money** Startup money has been changed from 3,000 to 35,000 Pokedollars.
+
 - **HGSS Pokedex Plus** Backported from HeartGold SoulSilver, you get to enjoy the features of Pokedex Plus.
 
 - **Follower Pokemon** Any Pokemon in the first party slot will follow you through the overworld.
