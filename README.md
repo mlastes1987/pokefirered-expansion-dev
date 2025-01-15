@@ -1,6 +1,6 @@
-# Pokémon FireRed and LeafGreen Expansion Dev
+# Pokémon FireRed and LeafGreen Ultra
 
-![Screenshot](pokefirered-expansion-dev-box-art.jpg)
+![Screenshot](fireredultra-box-art.jpg)
 
 Based on the pokefirered disassembly with Pokeemerald Expansion Updates from [**cawtds**](https://github.com/cawtds/pokefirered-expansion)
 
