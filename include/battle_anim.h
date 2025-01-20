@@ -466,7 +466,7 @@ void SpriteCB_RandomCentredHits(struct Sprite *sprite);
 void InitSpritePosToAnimTargetsCentre(struct Sprite *sprite, bool32 respectMonPicOffsets);
 
 //
-void MoveBattlerSpriteToBG(u8 battlerId, u8);
+void MoveBattlerSpriteToBG(u8 battlerId, bool8 toBG_2, bool8 setSpriteInvisible);
 void ResetBattleAnimBg(u8);
 void LoadMoveBg(u16 bgId);
 void ClearBattleAnimationVars(void);
@@ -556,7 +556,7 @@ void SetBattlerSpriteYOffsetFromRotation(u8 spriteId);
 void TrySetSpriteRotScale(struct Sprite *sprite, bool8 recalcCenterVector, s16 xScale, s16 yScale, u16 rotation);
 void TryResetSpriteAffineState(struct Sprite *sprite);
 u16 ArcTan2Neg(s16 a, s16 b);
-void SetGreyscaleOrOriginalPalette(u16 paletteNum, bool8 restoreOriginalColor);
+void SetGrayscaleOrOriginalPalette(u16 paletteNum, bool8 restoreOriginalColor);
 u32 GetBattlePalettesMask(bool8 battleBackground, bool8 attacker, bool8 target, bool8 attackerPartner, bool8 targetPartner, bool8 a6, bool8 a7);
 u32 GetBattleMonSpritePalettesMask(bool8 playerLeft, bool8 playerRight, bool8 foeLeft, bool8 foeRight);
 u8 GetSpritePalIdxByBattler(u8 a1);
@@ -593,5 +593,9 @@ void InitStatsChangeAnimation(u8 taskId);
 void StartMonScrollingBgMask(u8 taskId, s32 unused, u16 arg2, u8 battler1, u8 arg4, u8 arg5, u8 arg6, u8 arg7, const u32 *gfx, const u32 *tilemap, const u32 *palette);
 void ClearBattleAnimBg(u32 bgId);
 void AnimLoadCompressedBgTilemapHandleContest(struct BattleAnimBgData *, const void *, bool32);
+bool32 InitSpritePosToAnimBattler(u32 animBattlerId, struct Sprite *sprite, bool8 respectMonPicOffsets);
+
+// battle_anim_bug.c
+void AnimTranslateStinger(struct Sprite *sprite);
 
 #endif // GUARD_BATTLE_ANIM_H

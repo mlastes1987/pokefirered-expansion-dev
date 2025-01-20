@@ -705,6 +705,30 @@ void InitSpritePosToAnimAttacker(struct Sprite *sprite, bool8 respectMonPicOffse
     sprite->y += gBattleAnimArgs[1];
 }
 
+bool32 InitSpritePosToAnimBattler(u32 animBattlerId, struct Sprite *sprite, bool8 respectMonPicOffsets)
+{
+    u32 battlerId = GetAnimBattlerId(animBattlerId);
+    if (GetAnimBattlerSpriteId(animBattlerId) == 0xFF || !IsBattlerSpriteVisible(battlerId))
+    {
+        DestroyAnimSprite(sprite);
+        return FALSE;
+    }
+
+    if (!respectMonPicOffsets)
+    {
+        sprite->x = GetBattlerSpriteCoord2(battlerId, BATTLER_COORD_X);
+        sprite->y = GetBattlerSpriteCoord2(battlerId, BATTLER_COORD_Y);
+    }
+    else if (animBattlerId != ANIM_TARGET)
+    {
+        sprite->x = GetBattlerSpriteCoord2(battlerId, BATTLER_COORD_X_2);
+        sprite->y = GetBattlerSpriteCoord2(battlerId, BATTLER_COORD_Y_PIC_OFFSET);
+    }
+    SetAnimSpriteInitialXOffset(sprite, gBattleAnimArgs[0]);
+    sprite->y += gBattleAnimArgs[1];
+    return TRUE;
+}
+
 u8 GetBattlerAtPosition(u8 position)
 {
     u8 i;
@@ -1177,7 +1201,7 @@ u16 ArcTan2Neg(s16 a, s16 b)
     return -var;
 }
 
-void SetGreyscaleOrOriginalPalette(u16 paletteNum, bool8 restoreOriginalColor)
+void SetGrayscaleOrOriginalPalette(u16 paletteNum, bool8 restoreOriginalColor)
 {
     s32 i;
     struct PlttData *originalColor;
@@ -1822,20 +1846,20 @@ u8 CreateAdditionalMonSpriteForMoveAnim(u16 species, bool8 isBackpic, u8 templat
     u16 sheet = LoadSpriteSheet(&sSpriteSheets_MoveEffectMons[templateId]);
     u16 palette = AllocSpritePalette(sSpriteTemplates_MoveEffectMons[templateId].paletteTag);
 
-    if (gMonSpritesGfxPtr != NULL && gMonSpritesGfxPtr->multiUseBuffer == NULL)
-        gMonSpritesGfxPtr->multiUseBuffer = AllocZeroed(0x2000);
+    if (gMonSpritesGfxPtr != NULL && gMonSpritesGfxPtr->buffer == NULL)
+        gMonSpritesGfxPtr->buffer = AllocZeroed(0x2000);
     if (!isBackpic)
     {
         LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), OBJ_PLTT_ID(palette), PLTT_SIZE_4BPP);
-        LoadSpecialPokePic(gMonSpritesGfxPtr->multiUseBuffer, species, personality, TRUE);
+        LoadSpecialPokePic(gMonSpritesGfxPtr->buffer, species, personality, TRUE);
     }
     else
     {
         LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), OBJ_PLTT_ID(palette), PLTT_SIZE_4BPP);
-        LoadSpecialPokePic(gMonSpritesGfxPtr->multiUseBuffer, species, personality, FALSE);
+        LoadSpecialPokePic(gMonSpritesGfxPtr->buffer, species, personality, FALSE);
     }
-    RequestDma3Copy(gMonSpritesGfxPtr->multiUseBuffer, (void *)(OBJ_VRAM0 + (sheet * 0x20)), 0x800, 1);
-    FREE_AND_SET_NULL(gMonSpritesGfxPtr->multiUseBuffer);
+    RequestDma3Copy(gMonSpritesGfxPtr->buffer, (void *)(OBJ_VRAM0 + (sheet * 0x20)), 0x800, 1);
+    FREE_AND_SET_NULL(gMonSpritesGfxPtr->buffer);
     if (!isBackpic)
         spriteId = CreateSprite(&sSpriteTemplates_MoveEffectMons[templateId], x, y + gSpeciesInfo[species].frontPicYOffset, subpriority);
     else
