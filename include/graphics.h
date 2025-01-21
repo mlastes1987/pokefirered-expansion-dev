@@ -4242,19 +4242,19 @@ extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 
 // battle_anim_utility_funcs
-extern const u32 gFile_graphics_battle_anims_masks_curse_sheet[];
-extern const u32 gFile_graphics_battle_anims_masks_curse_tilemap[];
-extern const u32 gBattleStatMask_Gfx[];
-extern const u32 gBattleStatMask1_Pal[];
-extern const u32 gBattleStatMask2_Pal[];
-extern const u32 gBattleStatMask3_Pal[];
-extern const u32 gBattleStatMask4_Pal[];
-extern const u32 gBattleStatMask5_Pal[];
-extern const u32 gBattleStatMask6_Pal[];
-extern const u32 gBattleStatMask7_Pal[];
-extern const u32 gBattleStatMask8_Pal[];
-extern const u32 gBattleStatMask1_Tilemap[];
-extern const u32 gBattleStatMask2_Tilemap[];
+extern const u32 gBattleAnimMaskImage_Curse[];
+extern const u32 gBattleAnimMaskTilemap_Curse[];
+extern const u32 gStatAnim_Gfx[];
+extern const u32 gStatAnim_Defense_Pal[];
+extern const u32 gStatAnim_Attack_Pal[];
+extern const u32 gStatAnim_Accuracy_Pal[];
+extern const u32 gStatAnim_Speed_Pal[];
+extern const u32 gStatAnim_Multiple_Pal[];
+extern const u32 gStatAnim_Evasion_Pal[];
+extern const u32 gStatAnim_SpAttack_Pal[];
+extern const u32 gStatAnim_SpDefense_Pal[];
+extern const u32 gStatAnim_Increase_Tilemap[];
+extern const u32 gStatAnim_Decrease_Tilemap[];
 
 extern const u32 gSmokescreenImpactTiles[];
 extern const u32 gSmokescreenImpactPalette[];
@@ -4791,17 +4791,17 @@ extern const u32 gBattleAnimSpritePal_WhipHit[];
 extern const u32 gBattleAnimSpritePal_BlueRing2[];
 
 // battle anim task
-extern const u32 gUnusedLevelupAnimationGfx[];
-extern const u32 gUnusedLevelupAnimationTilemap[];
+extern const u32 UnusedLevelupAnimationGfx[];
+extern const u32 UnusedLevelupAnimationTilemap[];
 extern const u32 gCureBubblesGfx[];
 extern const u32 gCureBubblesPal[];
 extern const u32 gCureBubblesTilemap[];
 extern const u32 gBattleAnimBgTilemap_Attract[];
 extern const u32 gBattleAnimBgImage_Attract[];
 extern const u32 gBattleAnimBgPalette_Attract[];
-extern const u32 gBattleAnim_MorningSunGfx[];
-extern const u32 gBattleAnim_MorningSunTilemap[];
-extern const u32 gBattleAnim_MorningSunPal[];
+extern const u32 gBattleAnimMaskImage_LightBeam[];
+extern const u32 gBattleAnimMaskTilemap_LightBeam[];
+extern const u32 gBattleAnimMaskPalette_LightBeam[];
 
 // battle bg
 extern const u32 gBattleAnimBgImage_Dark[];
@@ -4829,7 +4829,7 @@ extern const u32 gBattleAnimBgPalette_Guillotine[];
 extern const u32 gBattleAnimBgPalette_Ice[];
 extern const u32 gBattleAnimBgPalette_Cosmic[];
 extern const u32 gBattleAnimBgPalette_InAir[];
-extern const u32 gBattleAnimBgPalette_MuddyWater[];
+extern const u32 gBattleAnimBackgroundImageMuddyWater_Pal[];
 extern const u32 gBattleAnimBgPalette_Sky[];
 extern const u32 gBattleAnimBgPalette_Aurora[];
 extern const u32 gBattleAnimBgPalette_Fissure[];
@@ -4875,8 +4875,6 @@ extern const u32 gFile_graphics_battle_anims_backgrounds_scary_face_palette[];
 extern const u32 gFile_graphics_battle_anims_backgrounds_scary_face_player_tilemap[];
 
 // rock
-extern const u32 gFile_graphics_battle_anims_backgrounds_sandstorm_brew_tilemap[];
-extern const u32 gFile_graphics_battle_anims_backgrounds_sandstorm_brew_sheet[];
 extern const u32 gBattleAnimSpritePal_FlyingDirt[];
 
 // title_screen

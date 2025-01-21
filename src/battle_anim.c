@@ -1117,13 +1117,13 @@ void ResetBattleAnimBg(bool8 to_BG2)
 
     if (!to_BG2)
     {
-        InitBattleAnimBg(1);
+        ClearBattleAnimBg(1);
         gBattle_BG1_X = 0;
         gBattle_BG1_Y = 0;
     }
     else
     {
-        InitBattleAnimBg(2);
+        ClearBattleAnimBg(2);
         gBattle_BG2_X = 0;
         gBattle_BG2_Y = 0;
     }
@@ -2188,12 +2188,3 @@ static void Cmd_createdragondartsprite(void)
         subpriority) != MAX_SPRITES) // Don't increment the task count if the sprite couldn't be created(i.e. there are too many created sprites atm).
          gAnimVisualTaskCount++;
 }
-
-// battle_anim_throw.c
-
-bool32 IsCriticalCapture(void)
-{
-    return gBattleSpritesDataPtr->animationData->isCriticalCapture;
-}
-
-//

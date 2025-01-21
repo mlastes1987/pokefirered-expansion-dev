@@ -2538,20 +2538,20 @@ void SpriteCB_PlayerMonSlideIn(struct Sprite *sprite)
 
 static void SpriteCB_TrainerThrowObject_Main(struct Sprite *sprite)
 {
-    UpdatePlayerPosInThrowAnim(sprite);
+    AnimSetCenterToCornerVecX(sprite);
     if (sprite->animEnded)
         sprite->callback = SpriteCB_Idle;
 }
 
 // Sprite callback for a trainer back pic to throw an object
 // (Wally throwing a ball, throwing Pokéblocks/balls in the Safari Zone)
-void SpriteCB_PlayerThrowInit(struct Sprite *sprite)
+void SpriteCB_TrainerThrowObject(struct Sprite *sprite)
 {
     StartSpriteAnim(sprite, 1);
     sprite->callback = SpriteCB_TrainerThrowObject_Main;
 }
 
-void UpdatePlayerPosInThrowAnim(struct Sprite *sprite)
+void AnimSetCenterToCornerVecX(struct Sprite *sprite)
 {
     if (sprite->animDelayCounter == 0)
         sprite->centerToCornerVecX = sCenterToCornerVecXs[sprite->animCmdIndex];
