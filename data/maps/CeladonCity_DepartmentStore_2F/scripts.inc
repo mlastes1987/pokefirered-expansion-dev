@@ -28,6 +28,7 @@ CeladonCity_DepartmentStore_2F_EventScript_ClerkItems::
 CeladonCity_DepartmentStore_2F_Items::
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_REVIVE
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
